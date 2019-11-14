@@ -17,7 +17,7 @@
         to the column below.
       </v-col>
       <v-col cols="12">
-        <Counter color='blue'/>
+        <Counter :color='color'/>
       </v-col>
     </v-row>
 
@@ -41,9 +41,9 @@
         you click on one, does it affect the count of the others?
       </v-col>
       <v-col cols="12">
-        <Counter color='red'/>
-        <Counter color='blue'/>
-        <Counter color='orange'/>
+        <Counter :color='color'/>
+        <Counter :color='color'/>
+        <Counter :color='color'/>
       </v-col>
     </v-row>
 
@@ -57,7 +57,7 @@
         <a href="https://vuejs.org/v2/guide/components-slots.html" target="_blank">For reference</a>
       </v-col>
       <v-col cols="12">
-        <Counter color="yellow"> times</Counter>
+        <Counter :color="color"> times</Counter>
       </v-col>
     </v-row>
 
@@ -66,12 +66,17 @@
     <v-row>
       <v-col cols="12">
         <h2>Part 5</h2>
-        Now, make a v-list below with different color choices. For now, just go with "red", "blue", "green", "yellow".
+        Now, make a v-select below with different color choices. For now, just go with "red", "blue", "green", "yellow".
         Bind the choice that is selected from that list to the "color" variable. The buttons should all change color.
         <a href="https://vuetifyjs.com/en/components/selects" target="_blank">For reference</a>
       </v-col>
       <v-col cols="12">
-        <!-- Your code here -->
+        <v-select
+          :items="colors"
+          label="Select a button color."
+          v-model="color"
+        >
+        </v-select>
       </v-col>
     </v-row>
 
@@ -97,6 +102,8 @@ export default {
   },
 
   data: () => ({
+    color: null,
+    colors: ['red', 'blue', 'green', 'yellow']
   })
 }
 </script>
