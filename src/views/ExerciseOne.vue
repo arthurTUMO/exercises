@@ -25,6 +25,9 @@
           <v-card-text>
             <v-text-field v-model="msg" label="Vue variables dynamically update"></v-text-field>
           </v-card-text>
+          <v-card-actions>
+            <v-btn @click="msg='Hello'">Reset</v-btn>
+          </v-card-actions>
         </v-card>
       </v-col>
 
@@ -76,7 +79,7 @@
       <v-col cols="12" v-else-if="msg=='Vue.js kinda rocks!'">
         Vue.js is the best.
       </v-col>
-      
+
       <v-col cols="12" v-else>
         <p>Bring back Hayko and Mko!</p>
       </v-col>
