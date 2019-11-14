@@ -78,7 +78,7 @@ export default {
   name: 'ExerciseThree',
 
   data: () => ({
-    students: []
+    students: ["Hayko", "Mko", "Abo"]
   })
 }
 </script>
