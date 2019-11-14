@@ -1,6 +1,6 @@
 <template>
   <v-container id="Counter">
-    <v-btn :color="color" @click="increment">
+    <v-btn :color="color" @click="increment" rounded>
       Counter: {{ count }}
       <slot></slot>
     </v-btn>
