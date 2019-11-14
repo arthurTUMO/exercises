@@ -64,6 +64,13 @@
         max-width="500"
         max-height="300"/>
       </v-col>
+      <v-col cols="6" v-if="msg=='Vue.js rocks!'">
+        <v-img
+        alt="mko"
+        src="../assets/mko.jpeg"
+        max-width="500"
+        max-height="300"/>
+      </v-col>
     </v-row>
 
     <v-divider class="my-4"/>
