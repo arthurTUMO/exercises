@@ -41,7 +41,9 @@
         you click on one, does it affect the count of the others?
       </v-col>
       <v-col cols="12">
-        <!-- Your code here -->
+        <Counter color='red'/>
+        <Counter color='blue'/>
+        <Counter color='orange'/>
       </v-col>
     </v-row>
 

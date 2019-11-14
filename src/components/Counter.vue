@@ -1,6 +1,6 @@
 <template>
   <v-container id="Counter">
-    <v-btn :color="color">Counter</v-btn>
+    <v-btn :color="color" @click="increment">Counter: {{ count }}</v-btn>
   </v-container>
 </template>
 
@@ -13,6 +13,13 @@ export default {
   },
 
   data: () => ({
-  })
+    count: 0
+  }),
+
+  methods: {
+    increment: function () {
+      this.count++
+    }
+  }
 }
 </script>
