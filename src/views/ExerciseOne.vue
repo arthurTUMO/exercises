@@ -57,6 +57,7 @@
         <h2>Part 3</h2>
         Now, type in "Vue.js rocks!" for the msg text field and see what happens...
       </v-col>
+
       <v-col cols="6" v-if="msg=='Vue.js rocks!'">
         <v-img
         alt="hayko"
@@ -71,8 +72,13 @@
         max-width="500"
         max-height="300"/>
       </v-col>
+
       <v-col cols="12" v-else-if="msg=='Vue.js kinda rocks!'">
         Vue.js is the best.
+      </v-col>
+      
+      <v-col cols="12" v-else>
+        <p>Bring back Hayko and Mko!</p>
       </v-col>
     </v-row>
 
