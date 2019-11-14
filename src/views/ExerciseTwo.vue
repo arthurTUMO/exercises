@@ -17,7 +17,7 @@
         to the column below.
       </v-col>
       <v-col cols="12">
-        <!-- Your code here -->
+        <Counter/>
       </v-col>
     </v-row>
 
@@ -85,8 +85,14 @@
 </template>
 
 <script>
+import Counter from '../components/Counter.vue'
+
 export default {
   name: 'ExerciseTwo',
+
+  components: {
+    Counter
+  },
 
   data: () => ({
   })
