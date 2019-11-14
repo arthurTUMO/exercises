@@ -71,6 +71,9 @@
         max-width="500"
         max-height="300"/>
       </v-col>
+      <v-col cols="12" v-else-if="msg=='Vue.js kinda rocks!'">
+        Vue.js is the best.
+      </v-col>
     </v-row>
 
     <v-divider class="my-4"/>
