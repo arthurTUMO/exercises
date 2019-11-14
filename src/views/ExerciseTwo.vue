@@ -53,11 +53,11 @@
       <v-col cols="12">
         <h2>Part 4</h2>
         Add a slot to the button so that we can add text to it from here. Compose
-        that button bellow with text between the opening and closing tags.
+        that button below with text between the opening and closing tags.
         <a href="https://vuejs.org/v2/guide/components-slots.html" target="_blank">For reference</a>
       </v-col>
       <v-col cols="12">
-        <!-- Your code here -->
+        <Counter color="yellow"> times</Counter>
       </v-col>
     </v-row>
 

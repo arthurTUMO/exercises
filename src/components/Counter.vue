@@ -1,6 +1,9 @@
 <template>
   <v-container id="Counter">
-    <v-btn :color="color" @click="increment">Counter: {{ count }}</v-btn>
+    <v-btn :color="color" @click="increment">
+      Counter: {{ count }}
+      <slot></slot>
+    </v-btn>
   </v-container>
 </template>
 
