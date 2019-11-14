@@ -17,7 +17,7 @@
         to the column below.
       </v-col>
       <v-col cols="12">
-        <Counter/>
+        <Counter color='blue'/>
       </v-col>
     </v-row>
 
