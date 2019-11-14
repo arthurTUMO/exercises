@@ -40,6 +40,14 @@
       <v-col cols="12">
         <b>Value of newMsg:</b> {{ newMsg }}
       </v-col>
+
+      <v-col cols="5">
+        <v-card>
+          <v-card-text>
+            <v-text-field v-model="newMsg" label="Vue variables dynamically update"></v-text-field>
+          </v-card-text>
+        </v-card>
+      </v-col>
     </v-row>
 
     <v-divider class="my-4"/>
@@ -113,7 +121,8 @@ export default {
   name: 'ExerciseOne',
 
   data: () => ({
-    msg: 'Hello'
+    msg: 'Hello',
+    newMsg: 'New'
   })
 }
 </script>
