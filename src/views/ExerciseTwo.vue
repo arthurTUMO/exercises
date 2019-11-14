@@ -84,6 +84,32 @@
 
     <v-row>
       <v-col cols="12">
+        <h2>Part 6</h2>
+        We want to color selector to have capitalized colors, but send in lowercase colors to our component.<br>
+        Change "colors" to a list of objects with a "text" and "value" field.<br>
+        The text is what we will show users and the value is the value that will be associated
+        with the text they click on. For example, green object would like like:<br>
+        { text: 'Green', value: 'green' }<br>
+        Incorporate this into the v-select.
+        <a href="https://vuetifyjs.com/en/components/selects#customized-item-text-and-value" target="_blank">For reference</a>
+      </v-col>
+    </v-row>
+
+    <v-divider class="my-4"/>
+
+    <v-row>
+      <v-col cols="12">
+        <h2>Part 7</h2>
+        Does the select still work properly if you change "value" to "val"? Observe the value of
+        color below: <br>
+        {{ color }}
+      </v-col>
+    </v-row>
+
+    <v-divider class="my-4"/>
+
+    <v-row>
+      <v-col cols="12">
         <h2>Challenge</h2>
         Can you figure out how to make a button rounded? Hint: Search the vuetify documentation for buttons.
       </v-col>
@@ -103,7 +129,8 @@ export default {
 
   data: () => ({
     color: null,
-    colors: ['red', 'blue', 'green', 'yellow']
+    colors: [ { text: 'Red', value: 'red' }, { text: 'Blue', value: 'blue' },
+      { text: 'Green', value: 'green' }, { text: 'Yellow', value: 'yellow' }]
   })
 }
 </script>
