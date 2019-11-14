@@ -26,7 +26,7 @@
             <v-text-field v-model="msg" label="Vue variables dynamically update"></v-text-field>
           </v-card-text>
           <v-card-actions>
-            <v-btn @click="msg='Hello'">Reset</v-btn>
+            <v-btn @click="reset">Reset</v-btn>
           </v-card-actions>
         </v-card>
       </v-col>
@@ -132,6 +132,16 @@
         <a href="https://vuetifyjs.com/en/components/cards#examples" target="_blank">For reference</a>
       </v-col>
     </v-row>
+
+    <v-divider class="my-4"/>
+
+    <v-row>
+      <v-col cols="12">
+        <h2>Part 9</h2>
+        Move the reset logic into a method in the javascript section.
+        <a href="https://vuejs.org/v2/guide/#Handling-User-Input" target="_blank">For reference</a>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
@@ -142,6 +152,12 @@ export default {
   data: () => ({
     msg: 'Hello',
     newMsg: 'New'
-  })
+  }),
+
+  methods: {
+    reset: function () {
+      this.msg = 'Hello'
+    }
+  }
 }
 </script>
