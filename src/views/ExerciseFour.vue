@@ -2,7 +2,7 @@
   <v-container id="exercise-four">
     <v-row no-gutters>
       <v-col cols="12">
-        <h1>Exercise 4: Login, Form Validation</h1>
+        <h1>Exercise 4: Login, Form Validation, v-tab</h1>
       </v-col>
 
       <v-col cols="12">
@@ -13,14 +13,14 @@
     <v-row dense>
       <v-col cols="12">
         <h2>Part 1</h2>
-        Create a component called Login.vue which is a card with a v-form containing
+        Create a component called Login.vue which is a v-card with a v-form containing
         two v-text-fields: email and password.
-        It doesn't have to be pretty, just get the basic outline.
+        It doesn't have to be pretty, just get the basic outline (don't forget the login button).
         Also import that newly-created component into this one and add it in the
-        next column below so we can see what it looks like.
+        column below so we can see what it looks like.
       </v-col>
       <v-col cols="12">
-        <!-- Your code here -->
+        <Login></Login>
       </v-col>
     </v-row>
 
@@ -29,7 +29,7 @@
     <v-row>
       <v-col cols="12">
         <h2>Part 2</h2>
-        Add an append-outer-icon for the password field that reveals the letters upon clicking.
+        Add an append-icon for the password field that reveals the letters upon clicking.
         <a href="https://vuetifyjs.com/en/components/text-fields#password-input" target="_blank">For reference</a>
       </v-col>
     </v-row>
@@ -41,6 +41,7 @@
         <h2>Part 3</h2>
         Create a component called Register.vue which is a card with a
         form containing four text fields: first name, last name, email, and password.
+        Don't forget the sign up button!
         Just as above, import it and add it below so we can see what it looks like.
       </v-col>
       <v-col cols="12">
@@ -53,7 +54,7 @@
     <v-row>
       <v-col cols="12">
         <h2>Part 4</h2>
-        Again, an append-outer-icon for the password field that reveals the letters upon clicking.
+        Again, an append-icon for the password field that reveals the letters upon clicking.
         <a href="https://vuetifyjs.com/en/components/text-fields#password-input" target="_blank">For reference</a>
       </v-col>
     </v-row>
@@ -63,18 +64,49 @@
     <v-row>
       <v-col cols="12">
         <h2>Part 5</h2>
-        Now, we will do some validation.
+        Now, we will do some validation. For both login and register, make sure that all fields are required.
+        Additionally for sign up, make sure that email is a valid email using a regular expression.
+        Also for sign up, make sure that password is at least 8 length and has 1 number.
+        <a href="https://dev.to/ratracegrad/form-validation-with-vuetify-in-a-vue-app-1a16" target="_blank">For reference</a>
+      </v-col>
+    </v-row>
+
+    <v-divider class="my-4"/>
+
+    <v-row>
+      <v-col cols="12">
+        <h2>Challenge</h2>
+        Try to enter a blank password. How many error messages do you get? (Hint: The answer is one.)
+        We would want the user to know of all password rules. See if you can look around the Vuetify
+        documentation to see how to change v-text-field to fix that.
+      </v-col>
+    </v-row>
+
+    <v-divider class="my-4"/>
+
+    <v-row>
+      <v-col cols="12">
+        <h2>Challenge 2</h2>
+        Read through the v-tabs documentation to figure out how to make a v-tabs for our login and
+        register form below.
+        <a href="https://vuetifyjs.com/en/components/tabs" target="_blank">For reference</a>
+      </v-col>
+      <v-col cols="12">
+        <!-- Your code here -->
       </v-col>
     </v-row>
   </v-container>
 </template>
 
 <script>
+import Login from '../components/Login.vue'
+
 export default {
   name: 'ExerciseFour',
-
+  components: {
+    Login
+  },
   data: () => ({
-    students: []
   })
 }
 </script>
