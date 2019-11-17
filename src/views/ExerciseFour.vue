@@ -64,9 +64,9 @@
     <v-row>
       <v-col cols="12">
         <h2>Part 5</h2>
-        Now, we will do some validation. For both login and register, make sure that all fields are required.
-        Additionally for sign up, make sure that email is a valid email using a regular expression.
-        Also for sign up, make sure that password is at least 8 length and has 1 number.
+        Now, we will do some validation. For only the register component, all fields are required.
+        Additionally, make sure that email is a valid email using a regular expression.
+        Also, make sure that password is at least 8 length and has 1 number.
         <a href="https://dev.to/ratracegrad/form-validation-with-vuetify-in-a-vue-app-1a16" target="_blank">For reference</a>
       </v-col>
     </v-row>
@@ -93,6 +93,17 @@
       </v-col>
       <v-col cols="12">
         <!-- Your code here -->
+      </v-col>
+    </v-row>
+
+    <v-divider class="my-4"/>
+
+    <v-row>
+      <v-col cols="12">
+        <h2>Challenge 3</h2>
+        Add another v-text-field to confirm the email address for the sign up component. Make sure that it matches the
+        other email field. You will need to use a computed function.
+        <a href="https://stackoverflow.com/questions/47213703/vuetify-form-validation-defining-es6-rules-for-matching-inputs" target="_blank">For reference</a>
       </v-col>
     </v-row>
   </v-container>
