@@ -3,11 +3,23 @@
     <v-card>
       <v-container>
         <v-card-title>
-          Sign in
+          Sign up
         </v-card-title>
         <v-card-text>
           <v-form>
             <v-row>
+              <v-col cols="12" md="6">
+                <v-text-field
+                  label="First Name"
+                  v-model="first"
+                ></v-text-field>
+              </v-col>
+              <v-col cols="12" md="6">
+                <v-text-field
+                  label="Last Name"
+                  v-model="last"
+                ></v-text-field>
+              </v-col>
               <v-col cols="12">
                 <v-text-field
                   label="Email"
@@ -28,7 +40,7 @@
         </v-card-text>
         <v-card-actions>
           <v-btn color="primary">
-            Sign in
+            Sign up
           </v-btn>
         </v-card-actions>
       </v-container>
@@ -38,10 +50,12 @@
 
 <script>
 export default {
-  name: 'Login',
+  name: 'Register',
 
   data: () => ({
     show: false,
+    first: null,
+    last: null,
     email: null,
     password: null
   })
