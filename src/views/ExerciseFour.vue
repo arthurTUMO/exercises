@@ -84,15 +84,31 @@
 
     <v-divider class="my-4"/>
 
-    <v-row>
+    <v-row justify="center">
       <v-col cols="12">
         <h2>Challenge 2</h2>
         Read through the v-tabs documentation to figure out how to make a v-tabs for our login and
         register form below.
         <a href="https://vuetifyjs.com/en/components/tabs" target="_blank">For reference</a>
       </v-col>
-      <v-col cols="12">
-        <!-- Your code here -->
+      <v-col cols="8">
+        <v-tabs
+          v-model="tabs"
+          class="elevation-2"
+          centered
+          grow
+          dark
+        >
+          <v-tabs-slider></v-tabs-slider>
+          <v-tab>Sign in</v-tab>
+          <v-tab-item>
+            <Login/>
+          </v-tab-item>
+          <v-tab>Sign Up</v-tab>
+          <v-tab-item>
+            <Register/>
+          </v-tab-item>
+        </v-tabs>
       </v-col>
     </v-row>
 
@@ -120,6 +136,7 @@ export default {
     Register
   },
   data: () => ({
+    tabs: 1
   })
 }
 </script>
