@@ -37,6 +37,7 @@
                   :append-icon="show? 'mdi-eye' : 'mdi-eye-off'"
                   :type="show ? 'text' : 'password'"
                   @click:append="show = !show"
+                  error-count="3"
                 ></v-text-field>
               </v-col>
             </v-row>
