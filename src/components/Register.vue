@@ -31,6 +31,13 @@
               </v-col>
               <v-col cols="12">
                 <v-text-field
+                  label="Confirm Email"
+                  v-model="emailToMatch"
+                  :rules="emailConfirmationRules"
+                ></v-text-field>
+              </v-col>
+              <v-col cols="12">
+                <v-text-field
                   label="Password"
                   v-model="password"
                   :rules="passwordRules"
@@ -62,6 +69,7 @@ export default {
     first: null,
     last: null,
     email: null,
+    emailToMatch: null,
     password: null,
     emailRules: [
       v => !!v || 'Email is required',
@@ -75,6 +83,14 @@ export default {
     notBlankRule: [
       v => !!v || 'This field is required'
     ]
-  })
+  }),
+  computed: {
+    emailConfirmationRules () {
+      return [
+        () => (this.email === this.emailToMatch) || 'E-mail must match',
+        v => !!v || 'Confirmation E-mail is required'
+      ]
+    }
+  }
 }
 </script>
