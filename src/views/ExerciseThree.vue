@@ -20,7 +20,7 @@
         <b>List of students:</b>
         <v-list>
           <v-list-item v-for="student in students" :key="student">
-            {{ student }}
+            <p><b>First Name: </b> {{ student.first }}  <b>Last Name: </b> {{ student.last }}</p>
           </v-list-item>
         </v-list>
       </v-col>
