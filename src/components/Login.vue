@@ -11,11 +11,16 @@
               <v-col cols="12">
                 <v-text-field
                   label="Email"
+                  v-model="email"
                 ></v-text-field>
               </v-col>
               <v-col cols="12">
                 <v-text-field
                   label="Password"
+                  v-model="password"
+                  :append-icon="show? 'mdi-eye' : 'mdi-eye-off'"
+                  :type="show ? 'text' : 'password'"
+                  @click:append="show = !show"
                 ></v-text-field>
               </v-col>
             </v-row>
@@ -36,6 +41,7 @@ export default {
   name: 'Login',
 
   data: () => ({
+    show: false
   })
 }
 </script>
