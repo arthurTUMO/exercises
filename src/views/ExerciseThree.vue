@@ -34,8 +34,9 @@
         Add a text field below with a label that says "Add students to the list" and a + append-outer-icon.
         <a href="https://vuetifyjs.com/en/components/text-fields#icons" target="_blank">For reference</a>
       </v-col>
-      <v-col cols="12">
-        <!-- Your code here -->
+      <v-col cols="4">
+        <v-text-field label="Add students to the list" v-model="newStudent" append-icon="add" @click:append="addStudent">
+        </v-text-field>
       </v-col>
     </v-row>
 
@@ -78,7 +79,15 @@ export default {
   name: 'ExerciseThree',
 
   data: () => ({
-    students: ["Hayko", "Mko", "Abo"]
-  })
+    students: ['Hayko', 'Mko', 'Abo'],
+    newStudent: null
+  }),
+
+  methods: {
+    addStudent: function () {
+      this.students.push(this.newStudent)
+      this.newStudent = null
+    }
+  }
 }
 </script>
