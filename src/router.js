@@ -4,6 +4,7 @@ import ExerciseOne from './views/ExerciseOne.vue'
 import ExerciseTwo from './views/ExerciseTwo.vue'
 import ExerciseThree from './views/ExerciseThree.vue'
 import ExerciseFour from './views/ExerciseFour.vue'
+import ExerciseFive from './views/ExerciseFive.vue'
 
 Vue.use(Router)
 
@@ -30,6 +31,11 @@ export default new Router({
       path: '/exercise-four',
       name: 'exercise-four',
       component: ExerciseFour
+    },
+    {
+      path: '/exercise-five',
+      name: 'exercise-five',
+      component: ExerciseFive
     }
   ]
 })

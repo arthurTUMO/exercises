@@ -7,6 +7,7 @@
           <router-link class="mx-1" to="/exercise-two">2. Composing Components</router-link>
           <router-link class="mx-1" to="/exercise-three">3. V-for, Forms</router-link>
           <router-link class="mx-1" to="/exercise-four">4. Form Validation</router-link>
+          <router-link class="mx-1" to="/exercise-five">5. Async Fetch, Lifecycle Hooks</router-link>
         </v-layout>
       </v-container>
       <router-view/>
