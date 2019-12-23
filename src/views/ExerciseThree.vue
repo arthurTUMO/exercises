@@ -19,8 +19,8 @@
       <v-col cols="12">
         <b>List of students:</b>
         <v-list>
-          <v-list-item v-for="student in students" :key="student">
-            {{ student }}
+          <v-list-item v-for="student in students" :key="student.name">
+            <p><b>First Name: </b> {{ student.name }} <b>Last Name: </b> {{ student.lastName }}</p>
           </v-list-item>
         </v-list>
       </v-col>
@@ -35,7 +35,18 @@
         <a href="https://vuetifyjs.com/en/components/text-fields#icons" target="_blank">For reference</a>
       </v-col>
       <v-col cols="12">
-        <!-- Your code here -->
+        <v-form>
+          <v-row>
+            <v-col cols="4">
+              <v-text-field v-model="first" label="Add the student's first name">
+              </v-text-field>
+            </v-col>
+            <v-col cols="4">
+              <v-text-field v-model="last" @click:append-outer="addStudent" label="Add the student's last name" append-outer-icon="mdi-plus">
+              </v-text-field>
+            </v-col>
+          </v-row>
+        </v-form>
       </v-col>
     </v-row>
 
@@ -87,7 +98,19 @@ export default {
   name: 'ExerciseThree',
 
   data: () => ({
-    students: []
-  })
+    students: [
+      { name: 'Arthur', lastName: 'Kasumyan' },
+      { name: 'Harutyun', lastName: 'Terteryan' },
+      { name: 'Arman', lastName: 'Moracamyan' }
+    ],
+    student: null,
+    first: null,
+    last: null
+  }),
+  methods: {
+    addStudent: function () {
+      this.students.push({ name: this.first, lastName: this.last })
+    }
+  }
 }
 </script>

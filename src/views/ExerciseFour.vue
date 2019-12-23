@@ -20,7 +20,7 @@
         column below so we can see what it looks like.
       </v-col>
       <v-col cols="12">
-        <!-- Your code here -->
+        <Login/>
       </v-col>
     </v-row>
 
@@ -36,7 +36,7 @@
 
     <v-divider class="my-4"/>
 
-    <v-row dense>
+    <v-row justify="center" dense>
       <v-col cols="12">
         <h2>Part 3</h2>
         Create a component called Register.vue which is a card with a
@@ -44,8 +44,8 @@
         Don't forget the sign up button!
         Just as above, import it and add it below so we can see what it looks like.
       </v-col>
-      <v-col cols="12">
-        <!-- Your code here -->
+      <v-col cols="8">
+        <Register/>
       </v-col>
     </v-row>
 
@@ -92,7 +92,13 @@
         <a href="https://vuetifyjs.com/en/components/tabs" target="_blank">For reference</a>
       </v-col>
       <v-col cols="8">
-        <!-- Your code here -->
+        <v-tabs v-model="tabs" class="elevation-2" centered grow dark>
+          <v-tabs-slider></v-tabs-slider>
+          <v-tab>Sign In</v-tab>
+          <v-tab-item><Login/></v-tab-item>
+          <v-tab>Register</v-tab>
+          <v-tab-item><Register/></v-tab-item>
+        </v-tabs>
       </v-col>
     </v-row>
 
@@ -110,10 +116,17 @@
 </template>
 
 <script>
+import Login from '../components/Login.vue'
+import Register from '../components/Register.vue'
+
 export default {
   name: 'ExerciseFour',
-
+  components: {
+    Login,
+    Register
+  },
   data: () => ({
+    tabs: 1
   })
 }
 </script>
