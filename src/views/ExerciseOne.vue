@@ -20,7 +20,7 @@
         <b>Value of msg:</b> {{ msg }}
       </v-col>
 
-      <v-col cols="5">
+      <v-col cols="12" md="5">
         <v-card>
           <v-card-text>
             <v-text-field v-model="msg" label="Vue variables dynamically update"></v-text-field>
@@ -44,7 +44,7 @@
         <b>Value of newMsg:</b> {{ newMsg }}
       </v-col>
 
-      <v-col cols="5">
+      <v-col cols="12" md="5">
         <v-card>
           <v-card-text>
             <v-text-field v-model="newMsg" label="Vue variables dynamically update"></v-text-field>
@@ -55,20 +55,20 @@
 
     <v-divider class="my-4"/>
 
-    <v-row>
+    <v-row justify="center">
       <v-col cols="12">
         <h2>Part 3</h2>
         Now, type in "Vue.js rocks!" for the msg text field and see what happens...
       </v-col>
 
-      <v-col cols="6" v-if="msg=='Vue.js rocks!'">
+      <v-col cols="10" sm="6" v-if="msg=='Vue.js rocks!'">
         <v-img
         alt="hayko"
         src="../assets/hayko.jpg"
         max-width="500"
         max-height="300"/>
       </v-col>
-      <v-col cols="6" v-if="msg=='Vue.js rocks!'">
+      <v-col cols="10" sm="6" v-if="msg=='Vue.js rocks!'">
         <v-img
         alt="mko"
         src="../assets/mko.jpeg"
