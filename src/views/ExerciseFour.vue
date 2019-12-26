@@ -154,7 +154,7 @@ export default {
   }),
   methods: {
     getMessage: function () {
-      axios.get('http://localhost:4000/')
+      axios.get('http://vue-exercises.herokuapp.com/endpoint')
         .then(response => {
           this.resp = response.data
         })
@@ -165,7 +165,7 @@ export default {
         .finally(() => { this.loading = false })
     },
     postMessage: function () {
-      axios.post('http://localhost:4000/', { name: 'Arthur', lastName: 'Kasumyan' })
+      axios.post('http://vue-exercises.herokuapp.com/', { name: 'Arthur', lastName: 'Kasumyan' })
         .then(response => {
           this.resp = response.data
         })
@@ -177,9 +177,9 @@ export default {
     },
     asyncCalls: async function () {
       try {
-        let resp = await axios.post('http://localhost:4000/', { name: 'Arthur', lastName: 'Kasumyan' })
+        let resp = await axios.post('http://vue-exercises.herokuapp.com/', { name: 'Arthur', lastName: 'Kasumyan' })
         console.log(resp.data)
-        resp = await axios.get('http://localhost:4000/')
+        resp = await axios.get('http://vue-exercises.herokuapp.com/endpoint')
         this.resp = resp.data
       } catch (error) {
         console.log(error)
