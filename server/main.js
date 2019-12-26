@@ -31,6 +31,17 @@ app.post('/register', (req, res) => {
   res.status(200).send(req.body);
 })
 
+app.get('/studentList', (req, res) => {
+  console.log('reached endpoint')
+  let response = {
+    studentList: [{ first: 'Arman', last: 'Gasparyan' },
+    { first: 'Harutyun', last: 'Terteryan' },
+    { first: 'Harutyun', last: 'Sargsyan' }]
+  }
+  res.status(200)
+  res.json(response)
+})
+
 let port = process.env.PORT || 4000;
 
 app.listen(port, function(){

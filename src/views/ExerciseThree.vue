@@ -19,7 +19,7 @@
       <v-col cols="12">
         <b>List of students:</b>
         <v-list>
-          <v-list-item v-for="student in students" :key="student">
+          <v-list-item v-for="(student, i) in students" :key="i">
             <p><b>First Name: </b> {{ student.first }}  <b>Last Name: </b> {{ student.last }}</p>
           </v-list-item>
         </v-list>
@@ -99,16 +99,20 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'ExerciseThree',
 
   data: () => ({
-    students: [{ first: 'Hayko', last: 'Janyan' },
-      { first: 'Mko', last: 'Kezinchyan' },
-      { first: 'Abo', last: 'Abo' }],
-    newStudent: null
+    students: null,
+    newStudent: null,
+    firstName: null,
+    lastName: null
   }),
-
+  mounted () {
+    this.fetchList()
+  },
   methods: {
     addStudent: function () {
       this.students.push(this.newStudent)
@@ -118,6 +122,12 @@ export default {
       this.students.push({ first: this.firstName, last: this.lastName })
       this.firstName = null
       this.lastName = null
+    },
+    fetchList: async function () {
+      let resp = await axios.get('http://localhost:4000/studentList')
+      console.log(resp.data)
+      console.log(resp.data['studentList'])
+      this.students = resp.data['studentList']
     }
   }
 }
