@@ -151,7 +151,7 @@ export default {
 
   data: () => ({
     msg: 'Hello',
-    newMsg: 'New'
+    newMsg: null
   }),
 
   methods: {
