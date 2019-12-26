@@ -110,6 +110,16 @@
           </v-tab-item>
         </v-tabs>
       </v-col>
+      <v-col cols="8">
+        <b>Value of resp:</b> {{ resp }}
+        <b>Value of errored:</b> {{ errored }}
+        <b>Value of loading:</b> {{ loading }}
+      </v-col>
+      <v-col cols="8">
+        <v-btn @click="getMessage">Call</v-btn>
+        <v-btn @click="postMessage">Post</v-btn>
+        <v-btn @click="asyncCalls">Async</v-btn>
+      </v-col>
     </v-row>
 
     <v-divider class="my-4"/>
@@ -128,6 +138,7 @@
 <script>
 import Login from '../components/Login.vue'
 import Register from '../components/Register.vue'
+import axios from 'axios'
 
 export default {
   name: 'ExerciseFour',
@@ -136,7 +147,44 @@ export default {
     Register
   },
   data: () => ({
-    tabs: 1
-  })
+    tabs: 1,
+    resp: null,
+    loading: null,
+    errored: null
+  }),
+  methods: {
+    getMessage: function () {
+      axios.get('http://localhost:4000/')
+        .then(response => {
+          this.resp = response.data
+        })
+        .catch(error => {
+          console.log(error)
+          this.errored = true
+        })
+        .finally(() => { this.loading = false })
+    },
+    postMessage: function () {
+      axios.post('http://localhost:4000/', { name: 'Arthur', lastName: 'Kasumyan' })
+        .then(response => {
+          this.resp = response.data
+        })
+        .catch(error => {
+          console.log(error)
+          this.errored = true
+        })
+        .finally(() => { this.loading = false })
+    },
+    asyncCalls: async function () {
+      try {
+        let resp = await axios.post('http://localhost:4000/', { name: 'Arthur', lastName: 'Kasumyan' })
+        console.log(resp.data)
+        resp = await axios.get('http://localhost:4000/')
+        this.resp = resp.data
+      } catch (error) {
+        console.log(error)
+      }
+    }
+  }
 }
 </script>

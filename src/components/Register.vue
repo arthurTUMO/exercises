@@ -51,7 +51,7 @@
           </v-form>
         </v-card-text>
         <v-card-actions>
-          <v-btn color="primary">
+          <v-btn color="primary" @click="submit">
             Sign up
           </v-btn>
         </v-card-actions>
@@ -61,6 +61,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'Register',
 
@@ -90,6 +92,22 @@ export default {
         () => (this.email === this.emailToMatch) || 'E-mail must match',
         v => !!v || 'Confirmation E-mail is required'
       ]
+    }
+  },
+  methods: {
+    submit: async function () {
+      let data = {
+        name: this.first,
+        lastName: this.last,
+        email: this.email,
+        password: this.password
+      }
+      try {
+        let response = await axios.post('http://localhost:4000/register', data)
+        console.log(response.data)
+      } catch (error) {
+        console.log(error)
+      }
     }
   }
 }
