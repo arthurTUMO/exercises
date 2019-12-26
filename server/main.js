@@ -3,18 +3,19 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const history = require('connect-history-api-fallback');
 const serveStatic = require('serve-static');
+const path = require("path")
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
-app.use(serveStatic(__dirname + "/dist/"));
+app.use(serveStatic(path.join(__dirname, '..', '/dist')));
 // Inserted this so that client-side routing works
 app.use(history({
   verbose: true
 }));
 // Documentation for connect-history-api-fallback requires this again...
-app.use(serveStatic(__dirname + "/dist/"));
+app.use(serveStatic(path.join(__dirname, '..', '/dist')));
 
 app.get('/endpoint', (req, res) => {
   res.send('hello')
@@ -33,7 +34,7 @@ app.post('/register', (req, res) => {
 let port = process.env.PORT || 4000;
 
 app.listen(port, function(){
-  console.log('Node js Express js Tutorial at port', port);
+  console.log('Node js at port', port);
 });
 
 
